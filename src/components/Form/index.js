@@ -58,10 +58,15 @@ class Form extends React.Component {
           <input
             type="text"
             className="form-controllg rounded border border-white shadow-sm"
-            placeholder="  https://twitter.com/tyomateee/status/1375802764220006405?s=20"
+            placeholder=" https://twitter.com/tyomateee/status/1375802764220006405?s=20"
             autoComplete="off"
             id="input-url"
             style={{ height: "55px", width: "100%" }}
+            onKeyPress={e => {
+              if (e.charCode === 13) {
+                this.process();
+              }
+            }}
           />
         </div>
         <div className="col-md-3 p-1">
