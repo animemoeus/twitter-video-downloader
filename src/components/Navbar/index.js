@@ -1,6 +1,6 @@
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light animate__animated animate__fadeIn">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light animate__animated animate__fadeInDown">
       <div className="container-fluid">
         <a className="navbar-brand" href="/">
           Twitter Video Downloader
