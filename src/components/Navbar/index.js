@@ -1,6 +1,6 @@
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light animate__animated animate__fadeIn">
       <div className="container-fluid">
         <a className="navbar-brand" href="/">
           Twitter Video Downloader
@@ -19,8 +19,13 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/">
-                Link
+              <a
+                className="nav-link active"
+                href="https://github.com/animemoeus/twitter-video-downloader"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Github
               </a>
             </li>
           </ul>
