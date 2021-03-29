@@ -57,18 +57,19 @@ class Form extends React.Component {
         <div className="col-md-9 p-1">
           <input
             type="text"
-            className="form-control"
+            className="form-controllg rounded border border-white shadow-sm"
             placeholder="https://twitter.com/tyomateee/status/1375802764220006405?s=20"
             autoComplete="off"
             id="input-url"
+            style={{ height: "55px", width: "100%" }}
           />
         </div>
         <div className="col-md-3 p-1">
           <button
-            className="btn btn-warning"
+            className="btn btn-warning shadow-sm"
             type="button"
-            style={{ width: "100%" }}
             onClick={this.process}
+            style={{ height: "55px", width: "100%" }}
           >
             Download
           </button>
