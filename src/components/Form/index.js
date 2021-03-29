@@ -53,7 +53,7 @@ class Form extends React.Component {
     }
 
     return (
-      <div className="row">
+      <div className="row  animate__animated animate__fadeInUp">
         <div className="col-md-9 p-1">
           <input
             type="text"

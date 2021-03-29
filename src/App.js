@@ -6,9 +6,11 @@ function App() {
     <div>
       <Navbar />
 
-      <div className="container-fluid animate__animated animate__fadeInUp">
+      <div className="container-fluid">
         <div className="container-md py-5">
-          <h2 className="text-center text-white">Twitter Video Downloader</h2>
+          <h2 className="text-center text-white container-fluid animate__animated animate__fadeIn">
+            Twitter Video Downloader
+          </h2>
           <br />
           <Form />
         </div>
