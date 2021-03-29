@@ -8,7 +8,7 @@ function App() {
 
       <div className="container-fluid">
         <div className="container-md py-5">
-          <h2 className="text-center text-white container-fluid animate__animated animate__fadeIn">
+          <h2 className="text-center text-white container-fluid animate__animated animate__zoomIn">
             Twitter Video Downloader
           </h2>
           <br />
