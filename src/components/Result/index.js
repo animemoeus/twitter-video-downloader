@@ -20,7 +20,7 @@ function Success(props) {
   });
 
   return (
-    <div className="card mt-4 animate__animated animate__fadeIn">
+    <div className="card mt-4 animate__animated animate__fadeIn shadow-lg">
       <div className="row g-0">
         <div className="col-md-4">
           <img
