@@ -1,11 +1,11 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 
+import { GridLoader } from "./components/loader";
 import Navbar from "./components/Navbar";
-import Form from "./components/Form";
-import { Spinner } from "./components/loader";
+import Home from "./components/home";
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -17,28 +17,17 @@ function App() {
   }, []);
 
   if (isLoading) {
-    return <Spinner />;
+    return <GridLoader />;
   } else {
     return (
-      <Router>
+      <div className="container-fluid p-0 m-0">
+        <Navbar />
         <Switch>
           <Route exact path="/">
-            <div>
-              <Navbar />
-
-              <div className="container-fluid">
-                <div className="container-md py-5">
-                  <h2 className="text-center text-white container-fluid animate__animated animate__zoomIn">
-                    Twitter Video Downloader
-                  </h2>
-                  <br />
-                  <Form />
-                </div>
-              </div>
-            </div>
+            <Home />
           </Route>
         </Switch>
-      </Router>
+      </div>
     );
   }
 }

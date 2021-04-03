@@ -68,3 +68,52 @@
   }
 }
 /* end loading animation */
+
+/* download button */
+.download-button {
+  box-shadow: inset 0px -3px 7px 0px #0086fe;
+  background: #0086fe;
+  background-color: #0086fe;
+  border-radius: 7px;
+  border: 1px solid;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 15px;
+  padding: 5px 15px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #263666;
+}
+.download-button:hover {
+  background: linear-gradient(to bottom, #0688fa 5%, #2dabf9 100%);
+  background-color: #0688fa;
+}
+.download-button:active {
+  position: relative;
+  top: 1px;
+}
+/* end download button */
+
+/* submit button */
+.submit-button {
+  background: #ffb700;
+  background-color: #ffb700;
+  border-radius: 7px;
+  border: 0.1px solid;
+  display: inline-block;
+  cursor: pointer;
+  color: #000000;
+  font-size: 15px;
+  padding: 5px 15px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #263666;
+}
+.submit-button:hover {
+  background: linear-gradient(to bottom, #ffb700 5%, #da9e07 100%);
+  background-color: #ffb700;
+}
+.submit-button:active {
+  position: relative;
+  top: 1px;
+}
+/* submit button */

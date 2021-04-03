@@ -1,4 +1,4 @@
-function Spinner() {
+function GridLoader() {
   return (
     <div
       className="lds-grid"
@@ -22,4 +22,4 @@ function Spinner() {
   );
 }
 
-export { Spinner };
+export { GridLoader };
