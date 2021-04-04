@@ -3,6 +3,7 @@ import { SubmitButton } from "../button";
 import { Success, Processing, Failed } from "../result";
 import { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
+import AdSense from "react-adsense";
 
 function Home() {
   const [status, setStatus] = useState(null);
@@ -82,6 +83,14 @@ function Home() {
           {status === "failed" && <Failed message={data.message} />}
         </div>
       </div>
+
+      <AdSense.Google
+        client="ca-pub-3865845660755241"
+        slot="4545380943"
+        style={{ display: "block" }}
+        layout="in-article"
+        format="fluid"
+      />
     </div>
   );
 }
