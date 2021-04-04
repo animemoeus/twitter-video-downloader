@@ -2,7 +2,7 @@ import "./App.css";
 import { useState, useEffect } from "react";
 
 import { GridLoader } from "./components/loader";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/navbar";
 import Home from "./components/home";
 
 import { Switch, Route } from "react-router-dom";

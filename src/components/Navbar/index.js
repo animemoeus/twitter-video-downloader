@@ -28,6 +28,16 @@ function Navbar() {
                 Github
               </a>
             </li>
+            <li className="nav-item">
+              <a
+                className="nav-link active"
+                href="https://t.me/twitter_video_downloader_bot"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Telegram Bot
+              </a>
+            </li>
           </ul>
         </div>
       </div>
