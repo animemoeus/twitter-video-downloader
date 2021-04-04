@@ -76,7 +76,7 @@ function Home() {
         </div>
       </div>
 
-      <div className="container-fluid border mt-3 text-center">
+      <div className="container-fluid px-2 py-1 mt-3 rounded text-center">
         <AdSense.Google
           client="ca-pub-3865845660755241"
           slot="4545380943"
