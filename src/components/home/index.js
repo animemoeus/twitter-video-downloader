@@ -76,6 +76,16 @@ function Home() {
         </div>
       </div>
 
+      <div className="container-fluid border mt-3 text-center">
+        <AdSense.Google
+          client="ca-pub-3865845660755241"
+          slot="4545380943"
+          style={{ display: "block" }}
+          layout="in-article"
+          format="fluid"
+        />
+      </div>
+
       <div className="row mt-3">
         <div className="col-md-12 px-2">
           {status === "success" && <Success data={data} />}
@@ -83,14 +93,6 @@ function Home() {
           {status === "failed" && <Failed message={data.message} />}
         </div>
       </div>
-
-      <AdSense.Google
-        client="ca-pub-3865845660755241"
-        slot="4545380943"
-        style={{ display: "block" }}
-        layout="in-article"
-        format="fluid"
-      />
     </div>
   );
 }
