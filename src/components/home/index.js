@@ -3,7 +3,7 @@ import { SubmitButton } from "../button";
 import { Success, Processing, Failed } from "../result";
 import { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
-import AdSense from "react-adsense";
+import { Ads } from "../ads";
 
 function Home() {
   const [status, setStatus] = useState(null);
@@ -62,7 +62,9 @@ function Home() {
   };
 
   return (
-    <div className="container-md mt-5">
+    <div className="container-md mt-3">
+      <Ads />
+
       <h2 className="text-center text-white fs-1 mb-2">
         Twitter Video Downloader
       </h2>
@@ -74,16 +76,6 @@ function Home() {
         <div className="col-md-4 px-2 py-1">
           <SubmitButton handleSubmit={handleSubmit} />
         </div>
-      </div>
-
-      <div className="container-fluid px-2 py-1 mt-3 rounded text-center">
-        <AdSense.Google
-          client="ca-pub-3865845660755241"
-          slot="4545380943"
-          style={{ display: "block" }}
-          layout="in-article"
-          format="fluid"
-        />
       </div>
 
       <div className="row mt-3">
