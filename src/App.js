@@ -26,6 +26,9 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
+          <Route path="/:tweet_id">
+            <Home />
+          </Route>
         </Switch>
       </div>
     );
