@@ -1,4 +1,4 @@
-import { DownloadButton } from "../button";
+import { DownloadButton } from "../../atoms";
 
 function Success(props) {
   return (

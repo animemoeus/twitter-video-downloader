@@ -1,9 +1,8 @@
-import { InputText } from "../form";
-import { SubmitButton } from "../button";
-import { Success, Processing, Failed } from "../result";
 import { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
-import { Ads } from "../ads";
+
+import { InputText, SubmitButton, Ads } from "../../components/atoms";
+import { Success, Processing, Failed } from "../../components/molecules";
 
 function Home() {
   const [status, setStatus] = useState(null);
@@ -18,7 +17,7 @@ function Home() {
     }
   }, []);
 
-  const handleInput = e => {
+  const handleInput = (e) => {
     if (e.charCode === 13) {
       process();
     }
@@ -41,8 +40,8 @@ function Home() {
       }
 
       fetch(`https://api.animemoe.us/twitter/video-downloader/?id=${tweet_id}`)
-        .then(res => res.json())
-        .then(data => {
+        .then((res) => res.json())
+        .then((data) => {
           if (data.success === "true") {
             setData(data.data);
             setStatus("success");

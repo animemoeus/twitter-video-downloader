@@ -14,4 +14,4 @@ function Ads() {
   );
 }
 
-export { Ads };
+export default Ads;

@@ -1,9 +1,11 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 
-import { GridLoader } from "./components/loader";
-import Navbar from "./components/navbar";
-import Home from "./components/home";
+// import { GridLoader } from "./components/loader";
+
+import { GridLoader } from "./components/atoms";
+import { Navbar } from "./components/molecules";
+import { Home } from "./pages";
 
 import { Switch, Route } from "react-router-dom";
 
