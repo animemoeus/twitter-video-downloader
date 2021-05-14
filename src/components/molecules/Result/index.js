@@ -26,7 +26,7 @@ function Success(props) {
             <hr />
             <div className="card-text">
               <h4>Download:</h4>
-              {props.data.video.map((e, i) => {
+              {props.data.videos.map((e, i) => {
                 return <DownloadButton key={i} target={e.url} text={e.size} />;
               })}
             </div>

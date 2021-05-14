@@ -39,7 +39,9 @@ function Home() {
         tweet_id = url.match("[0-9]{10,20}");
       }
 
-      fetch(`https://api.animemoe.us/twitter/video-downloader/?id=${tweet_id}`)
+      fetch(
+        `https://api.animemoe.us/twitter-video-downloader/v2?id=${tweet_id}`
+      )
         .then((res) => res.json())
         .then((data) => {
           if (data.success === "true") {
