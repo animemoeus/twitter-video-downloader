@@ -1,4 +1,4 @@
-import { Home, NotFound } from "../pages";
+import { Home, NotFound, Latest } from "../pages";
 
 import { Switch, Route } from "react-router-dom";
 
@@ -8,6 +8,9 @@ function Router() {
       <Switch>
         <Route exact path="/">
           <Home />
+        </Route>
+        <Route exact path="/latest">
+          <Latest />
         </Route>
         <Route exact path="*">
           <NotFound />
