@@ -11,8 +11,13 @@ import {
 function Home() {
   const [status, setStatus] = useState(null);
   const [data, setData] = useState({});
+  const [url, setUrl] = useState("");
 
   const handleInput = (e) => {
+    setUrl(e);
+  };
+
+  const handleKeyPress = (e) => {
     if (e.charCode === 13) {
       process();
     }
@@ -22,36 +27,26 @@ function Home() {
     process();
   };
 
-  const process = (tweet_id = null) => {
-    const url = document.getElementById("input").value;
+  const process = () => {
+    setStatus("processing");
 
-    if (url.length <= 0 && tweet_id === null) {
-      alert("Please Input URL First");
-    } else {
-      setStatus("processing");
+    let tweet_id = url.match("[0-9]{10,20}");
 
-      if (tweet_id === null) {
-        tweet_id = url.match("[0-9]{10,20}");
-      }
-
-      fetch(
-        `https://api.animemoe.us/twitter-video-downloader/v2/?id=${tweet_id}`
-      )
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.success === "true") {
-            setData(data.data);
-            setStatus("success");
-          } else {
-            setData({ message: data.message });
-            setStatus("failed");
-          }
-        })
-        .catch(() => {
-          setData({ message: "Check Your Internet Connection" });
+    fetch(`https://api.animemoe.us/twitter-video-downloader/v2/?id=${tweet_id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success === "true") {
+          setData(data.data);
+          setStatus("success");
+        } else {
+          setData({ message: data.message });
           setStatus("failed");
-        });
-    }
+        }
+      })
+      .catch(() => {
+        setData({ message: "Check Your Internet Connection" });
+        setStatus("failed");
+      });
   };
 
   return (
@@ -67,7 +62,10 @@ function Home() {
 
         <div className="row">
           <div className="col-md-8 px-2 py-1">
-            <InputText handleInput={handleInput} />
+            <InputText
+              handleInput={handleInput}
+              handleKeyPress={handleKeyPress}
+            />
           </div>
           <div className="col-md-4 px-2 py-1">
             <SubmitButton handleSubmit={handleSubmit} />
