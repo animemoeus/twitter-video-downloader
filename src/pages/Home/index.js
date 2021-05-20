@@ -1,21 +1,16 @@
-import { useState, useEffect } from "react";
-import { useHistory, useParams } from "react-router-dom";
+import { useState } from "react";
 
 import { InputText, SubmitButton, Ads } from "../../components/atoms";
-import { Success, Processing, Failed } from "../../components/molecules";
+import {
+  Success,
+  Processing,
+  Failed,
+  Navbar,
+} from "../../components/molecules";
 
 function Home() {
   const [status, setStatus] = useState(null);
   const [data, setData] = useState({});
-
-  let { tweet_id } = useParams();
-  let history = useHistory();
-
-  useEffect(() => {
-    if (tweet_id) {
-      process(tweet_id);
-    }
-  }, []);
 
   const handleInput = (e) => {
     if (e.charCode === 13) {
@@ -40,16 +35,13 @@ function Home() {
       }
 
       fetch(
-        `https://api.animemoe.us/twitter-video-downloader/v2?id=${tweet_id}`
+        `https://api.animemoe.us/twitter-video-downloader/v2/?id=${tweet_id}`
       )
         .then((res) => res.json())
         .then((data) => {
           if (data.success === "true") {
             setData(data.data);
             setStatus("success");
-
-            // clean the url
-            history.push("/");
           } else {
             setData({ message: data.message });
             setStatus("failed");
@@ -63,27 +55,31 @@ function Home() {
   };
 
   return (
-    <div className="container-md mt-3">
-      <Ads />
+    <div>
+      <Navbar />
 
-      <h2 className="text-center text-white fs-1 mb-2">
-        Twitter Video Downloader
-      </h2>
+      <div className="container-md mt-4">
+        <Ads />
 
-      <div className="row">
-        <div className="col-md-8 px-2 py-1">
-          <InputText handleInput={handleInput} />
+        <h2 className="text-center text-white fs-1 mb-2">
+          Twitter Video Downloader
+        </h2>
+
+        <div className="row">
+          <div className="col-md-8 px-2 py-1">
+            <InputText handleInput={handleInput} />
+          </div>
+          <div className="col-md-4 px-2 py-1">
+            <SubmitButton handleSubmit={handleSubmit} />
+          </div>
         </div>
-        <div className="col-md-4 px-2 py-1">
-          <SubmitButton handleSubmit={handleSubmit} />
-        </div>
-      </div>
 
-      <div className="row mt-3">
-        <div className="col-md-12 px-2">
-          {status === "success" && <Success data={data} />}
-          {status === "processing" && <Processing />}
-          {status === "failed" && <Failed message={data.message} />}
+        <div className="row mt-3">
+          <div className="col-md-12 px-2">
+            {status === "success" && <Success data={data} />}
+            {status === "processing" && <Processing />}
+            {status === "failed" && <Failed message={data.message} />}
+          </div>
         </div>
       </div>
     </div>
