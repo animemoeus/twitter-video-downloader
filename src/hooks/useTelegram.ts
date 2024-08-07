@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { TelegramWebApp } from '@/types/telegramWebApp';
 
+
 const useTelegramWebApp = () => {
   const [telegramWebApp, setTelegramWebApp] = useState<TelegramWebApp | null>(null);
 
@@ -19,6 +20,10 @@ const useTelegramWebApp = () => {
     };
   }, []);
 
+
+  if(!telegramWebApp?.initData){
+
+  }
 
   return telegramWebApp;
 };

@@ -2,6 +2,7 @@
 
 // import { useEffect, useState } from "react";
 import { useTelegramWebApp } from "@/hooks/useTelegram";
+import { redirect } from "next/navigation";
 
 export default function Home() {
   const telegramWebApp = useTelegramWebApp();
@@ -13,7 +14,11 @@ export default function Home() {
     );
   }
 
-  console.log(telegramWebApp);
+  if (telegramWebApp && !telegramWebApp.initData) {
+    redirect("https://t.me/twitter_video_downloader_bot");
+  }
+
+  console.log(!telegramWebApp.initData);
 
   return (
     <div className="flex min-h-screen justify-center items-center">
