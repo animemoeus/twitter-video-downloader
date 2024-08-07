@@ -6,7 +6,7 @@ const useTelegramWebApp = () => {
   useEffect(() => {
     const checkTelegramWebApp = async () => {
       while (!window.Telegram || !window.Telegram.WebApp) {
-        await new Promise(resolve => setTimeout(resolve, 5000));
+        await new Promise(resolve => setTimeout(resolve, 100));
       }
       setTelegramWebApp(window.Telegram.WebApp);
     };
