@@ -1,3 +1,9 @@
-interface Window {
-    Telegram: any;
+export {};
+
+declare global {
+  interface Window {
+    Telegram: {
+      WebApp: TelegramWebApp;
+    };
+  }
 }

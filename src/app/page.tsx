@@ -13,9 +13,14 @@ export default function Home() {
     );
   }
 
+  console.log(telegramWebApp);
+
   return (
     <div className="flex min-h-screen justify-center items-center">
       <div>Hello World!</div>
+      <div>
+        <button onClick={() => telegramWebApp.close()}>Close Mini App</button>
+      </div>
     </div>
   );
 }

@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
+import { TelegramWebApp } from '@/types/telegramWebApp';
 
 const useTelegramWebApp = () => {
-  const [telegramWebApp, setTelegramWebApp] = useState(null);
+  const [telegramWebApp, setTelegramWebApp] = useState<TelegramWebApp | null>(null);
 
   useEffect(() => {
     const checkTelegramWebApp = async () => {
