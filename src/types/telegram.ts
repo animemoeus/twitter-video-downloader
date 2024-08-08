@@ -1,7 +1,5 @@
-
 export interface TelegramWebApp {
-    close: () => void;
-    
-    initData: string;
-  }
-  
+  close: () => void;
+
+  initData: string;
+}

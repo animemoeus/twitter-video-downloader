@@ -1,14 +1,15 @@
-import { useEffect, useState } from 'react';
-import { TelegramWebApp } from '@/types/telegram';
-
+import { useEffect, useState } from "react";
+import { TelegramWebApp } from "@/types/telegram";
 
 const useTelegramWebApp = () => {
-  const [telegramWebApp, setTelegramWebApp] = useState<TelegramWebApp | null>(null);
+  const [telegramWebApp, setTelegramWebApp] = useState<TelegramWebApp | null>(
+    null
+  );
 
   useEffect(() => {
     const checkTelegramWebApp = async () => {
       while (!window.Telegram || !window.Telegram.WebApp) {
-        await new Promise(resolve => setTimeout(resolve, 100));
+        await new Promise((resolve) => setTimeout(resolve, 100));
       }
       setTelegramWebApp(window.Telegram.WebApp);
     };
@@ -20,12 +21,10 @@ const useTelegramWebApp = () => {
     };
   }, []);
 
-
-  if(!telegramWebApp?.initData){
-
+  if (!telegramWebApp?.initData) {
   }
 
   return telegramWebApp;
 };
 
-export {useTelegramWebApp};
+export { useTelegramWebApp };
